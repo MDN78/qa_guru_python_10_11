@@ -3,7 +3,7 @@ from selene import browser, have, be, by
 from selene.core import command
 import os
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_demoqa_form():
     browser.open('/automation-practice-form')
     browser.element('#firstName').should(be.blank).send_keys('Ivan')
@@ -17,7 +17,7 @@ def test_demoqa_form():
     browser.element('.react-datepicker__year-select').click().element(by.text("1980")).click()
     browser.element('.react-datepicker__month-select').click().element(by.text("January")).click()
     browser.element('.react-datepicker__day--010').click()
-    browser.element('#uploadPicture').send_keys(os.path.abspath('picture.jpg'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/picture.jpg'))
     browser.element("[class='custom-control custom-checkbox custom-control-inline']").click()
     browser.element('#subjectsInput').type('Physics').press_enter()
     browser.element('#currentAddress').send_keys('111999, St Hall avenue 34')

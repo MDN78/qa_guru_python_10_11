@@ -1,3 +1,4 @@
+import pytest
 from selene import browser, have, be, by
 import os
 import time
@@ -8,6 +9,7 @@ from selene.core import command
 # 1) AAA - Arrange, Act, Assert
 # 2) BDD - Given, When, Then
 
+@pytest.mark.skip
 def test_student_registration_form():
     '''
     Разбор занятия. Разобраны селекторы и более качественное оформление кода.
