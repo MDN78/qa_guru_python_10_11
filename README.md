@@ -49,3 +49,22 @@ def relative_from_root(path: str):
 config = Config(_env_file=path.relative_from_root('.env'))
 ```
 
+### Хранение нескольких файлов `.env`
+
+Принято файлы `.env` в Гит не ложитб тк там могут быть конфиденциальные данные - пароли или логины и добавляют его в gitignore
+
+в Гите делают его с доп наименованием `.env.example` и в них отражать то что актуально для определенного типа запуска и не секретно
+
+После этого нужно указывать какой `.env` использовать
+
+```commandline
+add import
+from typing import Literal
+
+class Config(BaseSettings):
+    context: Literal['example', 'test'] = 'test'
+    ......
+    
+config = Config(_env_file=path.relative_from_root(f'.env.{Config().context}'))
+    
+```
