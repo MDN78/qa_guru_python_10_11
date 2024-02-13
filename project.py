@@ -1,6 +1,8 @@
 import dotenv
 from pydantic_settings import BaseSettings
 
+from utils import path
+
 
 class Config(BaseSettings):
     driver_name: str = 'firefox'
@@ -12,4 +14,5 @@ class Config(BaseSettings):
 
 
 # dotenv.load_dotenv()
-config = Config(_env_file='.env')
+# config = Config(_env_file='.env')
+config = Config(_env_file=path.relative_from_root('.env'))

@@ -9,8 +9,8 @@ def driver_configuration():
     dotenv.load_dotenv()
     browser.config.driver_name = project.config.driver_name
     browser.config.hold_driver_at_exit = project.config.hold_driver_at_exit
-    browser.config.window_width = project.config.window_width
-    browser.config.window_height = project.config.window_height
+    # browser.config.window_width = project.config.window_width
+    # browser.config.window_height = project.config.window_height
     browser.config.base_url = project.config.base_url
     browser.config.timeout = project.config.timeout
 

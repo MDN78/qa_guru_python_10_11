@@ -30,11 +30,22 @@ config = Config()
 dotenv.load_dotenv()
 config = Config()
 ```
-как другой вариант - указать прямо в функции
+как другой вариант - передать путь явно в функцию
 
 ```commandline
 config = Config(_env_file='.env')
 ```
 
+но, может не сработать если запускать тесты с другого места. Для этого улучим реализацию пути и указания, где этот файл
+можно использовать хелпер - создать файл в папке `utils` и там будет код этого хелпера
 
+Это означает - от файла `__init__`  в папке, где лежит этот скрипт поднимаемся вверх раз, второй, и уже в основной директории ищем файл
+```commandline
+def relative_from_root(path: str):
+    from pathlib import Path
+    return Path(__file__).parent.parent.joinpath(path).absolute().__str__()
+
+
+config = Config(_env_file=path.relative_from_root('.env'))
+```
 
