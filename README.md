@@ -21,6 +21,20 @@ class Config(BaseSettings):
 
 config = Config()
 ```
-4) 
+4) Значение конфигурационных настроек можно вынести в отдельный файл `.env`  Возможно нужна библиотека `python-dotenv` 
+но не факт
+5) Далее в файле куда из `.env` должны подтягиваться переменные указываем вызов `dotenv.load_dotenv()`
+6) Как подружить pydantic с .env: - вызываем перед тем как создаем конфиг
+
+```commandline
+dotenv.load_dotenv()
+config = Config()
+```
+как другой вариант - указать прямо в функции
+
+```commandline
+config = Config(_env_file='.env')
+```
+
 
 
