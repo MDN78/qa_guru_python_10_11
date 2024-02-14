@@ -25,6 +25,8 @@ def driver_configuration():
         driver_options = webdriver.ChromeOptions()
         driver_options.page_load_strategy = 'eager'
         browser.config.driver_options = driver_options
+        browser.config.window_width = project.config.window_width
+        browser.config.window_height = project.config.window_height
     browser.config.hold_driver_at_exit = project.config.hold_driver_at_exit
     # browser.config.window_width = project.config.window_width
     # browser.config.window_height = project.config.window_height
