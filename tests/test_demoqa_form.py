@@ -21,6 +21,7 @@ def test_demoqa_form():
     browser.element("[placeholder='Current Address']").perform(command.js.scroll_into_view)
 
     browser.element("[class='custom-control custom-checkbox custom-control-inline']").click()
+    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/picture.jpg'))
     browser.element('#currentAddress').send_keys('111999, St Hall avenue 34')
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
