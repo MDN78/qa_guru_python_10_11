@@ -18,6 +18,6 @@ class Config(BaseSettings):
 # config = Config(_env_file='.env')
 # config = Config(_env_file=path.relative_from_root('.env'))
 config = Config(_env_file=path.relative_from_root(f'.env.{Config().context}'))
-
+pass
 # как вариант использовать спец библиотеку dotenv для поиска пути
 # dotenv.find_dotenv()

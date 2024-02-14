@@ -17,9 +17,10 @@ def test_demoqa_form():
     browser.element('.react-datepicker__year-select').click().element(by.text("1980")).click()
     browser.element('.react-datepicker__month-select').click().element(by.text("January")).click()
     browser.element('.react-datepicker__day--010').click()
-    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/picture.jpg'))
-    browser.element("[class='custom-control custom-checkbox custom-control-inline']").click()
     browser.element('#subjectsInput').type('Physics').press_enter()
+    browser.element("[placeholder='Current Address']").perform(command.js.scroll_into_view)
+
+    browser.element("[class='custom-control custom-checkbox custom-control-inline']").click()
     browser.element('#currentAddress').send_keys('111999, St Hall avenue 34')
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
