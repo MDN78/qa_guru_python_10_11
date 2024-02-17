@@ -69,3 +69,15 @@ config = Config(_env_file=path.relative_from_root(f'.env.{Config().context}'))
     
 ```
 
+### Запуск с выбором Literal
+
+Команда для bash терминала - `pytest context=example`
+
+Команда для power shell:
+
+```
+set context=example
+pytest
+```
+
+Командой `echo "context"` можем посмотреть что у нас в переменной
