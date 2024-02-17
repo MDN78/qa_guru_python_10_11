@@ -76,8 +76,8 @@ config = Config(_env_file=path.relative_from_root(f'.env.{Config().context}'))
 Команда для power shell:
 
 ```
-set context=example
-pytest
+-> set context=example
+-> pytest
 ```
 
 Командой `echo "context"` можем посмотреть что у нас в переменной
